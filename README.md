@@ -140,4 +140,5 @@ Note: The main aim of the project was to deal with the subject of IOT and connec
 Thanks for reading, I hope my tutorial was helpful.
  
 Author: Tomasz Smaruj 
+email: tomasz.smaruj@wp.pl 
 
