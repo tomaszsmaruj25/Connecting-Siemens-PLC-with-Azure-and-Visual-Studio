@@ -109,10 +109,11 @@ This is neccesery to add IP Adresses on the whitelist. Click "add client IP", an
 
 *Attention, first you have to create table where you will save your data. To do it, firstly go to the step 4. and come back afterwards. 
 
- If you created a table in your SQL Database, click on new service, and find Stream Analytics Job. Name it, select subscription what you want, and deploy. 
+ If you created a table in your SQL Database, click on new service, and find Stream Analytics Job. Name it, select subscription what you want, deploy and open it. Now, you need to add an Input - it is your IOT Hub. Then add output - which is you SQL Server - here you also have to type server name, login, password and Table what you created. If it is configured, go to SQL Query, and type You can watch input, and test your queries on the panel. Here is example command. 
  
 <img src="assets/azure_stream.PNG" width="600">
 
+Now start your Analytics Job. If there is no errors, and you see that input and output on the graph is loading and saving, you sucesfully establish connection with your device and Azure Cloud. 
 
 ### 4. Microsoft SQL Server
 Since you created SQL Server, try to run it on external programs, e.g. Microsoft SQL Server. To connect to your server open the program and click "Connect". You will see the panel, like below. To connect enter your Full Server Name, and login, password what you established. For the first time, you probably see the message that you have to enter your IP Addres to the Whitelist(check above how to do it). If everything  
@@ -131,7 +132,9 @@ If everything compiles correctly, now you can start program (CTRL + F5) and... v
  
 <img src="assets/Visual-final.PNG" width="350">
 
+Note: The main aim of the project was to deal with the subject of IOT and connecting the device with a cloud database, so the application is very simple. In further projects, I will focus on solutions to connect with the base and visualization - such as, for example, Django. 
  
 Thanks for reading, I hope my tutorial was helpful.
+ 
 Author: Tomasz Smaruj 
 
