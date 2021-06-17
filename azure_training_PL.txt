@@ -1,0 +1,52 @@
+1. Wyświetlanie listy baz danych i informacji dot. bazy danych i jej stanie
+az configure --defaults group=learn-292c2a2a-4063-4a38-8749-434620d1d96d sql-server=tomasz-smaruj-server-test
+
+2. Pokaż listę baz danych serwera
+az sql db list
+
+3. Wyświetlenie tylko nazwy bazy danych
+az sql db list | jq '[.[] | {name: .name}]'
+
+4. Informacje nt. bazy danych logistics
+az sql db show --name Logistics
+
+5. Tym razem przekaż dane wyjściowe do narzędzia jq, aby dane wyjściowe zawierały tylko nazwę, maksymalny rozmiar i stan bazy danych Logistics.
+az sql db show --name Logistics | jq '{name: .name, maxSizeBytes: .maxSizeBytes, status: .status}'
+
+6. Pobranie parametrów połączenia 
+az sql db show-connection-string --client sqlcmd --name Logistics
+
+7. Uruchom sesje - komenda będzie w terminalu, przykład:
+"sqlcmd -S tcp:contoso-1.database.windows.net,1433 -d Logistics -U <username> -P <password> -N -l 30"
+
+8. Komenda SQL Do stworzenia tabeli
+CREATE TABLE Drivers (DriverID int, LastName varchar(255), FirstName varchar(255), OriginCity varchar(255));
+GO
+
+Sprawdzenie
+SELECT name FROM sys.tables;
+GO
+
+Wprowadzanie wierszy:
+INSERT INTO Drivers (DriverID, LastName, FirstName, OriginCity) VALUES (123, 'Zirne', 'Laura', 'Springfield');
+GO
+
+Wybierz wiersz:
+SELECT DriverID, OriginCity FROM Drivers;
+GO
+
+Zmiana ID:
+UPDATE Drivers SET OriginCity='Boston' WHERE DriverID=123;
+GO
+
+Usuwanie:
+DELETE FROM Drivers WHERE DriverID=123;
+GO
+
+
+
+
+
+
+
+

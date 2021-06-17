@@ -1,0 +1,4 @@
+﻿  MyForm.cpp
+C:\Users\smarujt\Desktop\bazy danych\Project1\Project1\MyForm.cpp(14,15): warning C4551: wywołaniu funkcji brakuje listy argumentów
+  MyForm.obj : napotkano moduł MSIL; konsolidowanie przyrostowe jest wyłączone dla modułów MSIL; zostanie wykonana pełna konsolidacja
+  Project1.vcxproj -> C:\Users\smarujt\Desktop\bazy danych\Project1\Debug\Project1.exe
