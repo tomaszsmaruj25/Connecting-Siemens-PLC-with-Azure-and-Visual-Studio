@@ -108,26 +108,30 @@ This is neccesery to add IP Adresses on the whitelist. Click "add client IP", an
 #### Stream Analytics Job
 
 *Attention, first you have to create table where you will save your data. To do it, firstly go to the step 4. and come back afterwards. 
- 
+
+ If you created a table in your SQL Database, click on new service, and find Stream Analytics Job. Name it, select subscription what you want, and deploy. 
  
 <img src="assets/azure_stream.PNG" width="600">
 
 
 ### 4. Microsoft SQL Server
+Since you created SQL Server, try to run it on external programs, e.g. Microsoft SQL Server. To connect to your server open the program and click "Connect". You will see the panel, like below. To connect enter your Full Server Name, and login, password what you established. For the first time, you probably see the message that you have to enter your IP Addres to the Whitelist(check above how to do it). If everything  
+ 
+<img src="assets/SQLServer-connection.PNG" width="400">
 
-<img src="assets/SQLServer-connection.PNG" width="350">
-
-You can use [My SQL Script](/MyDBquery.sql) to create the basic table and check is it working.
+To do it, on the top panel select - "New Query", and type SQL command to create the table. You can also use [My SQL Script](/MyDBquery.sql) to create the basic table and display it. To ensure, everything is working check that you can add some records.
 
 
 ### 5. Visual Studio
-Install additional extension for Visual Studio which is SQL Server and open SQL Server Object Explorer. Log to your database and you should see
-When everything is working go to the file MyForm.h in line 405 you need to add a connection parameters(server name, catalog name, ID and Password for loging in to the SQL Server,  in te line:
+When installing, you need to choose C++ compiler, and afterwards you also need additional extension for Visual Studio which is SQL Server. If you already have these extensions  open SQL Server Object Explorer. Log to your database and you should see your database and tables. 
+ 
+When everything is working go to the file [MyForm.h](/Visualisation_VS/Project1//MyForm.h) in line 405 you need to add a connection parameters(server name, catalog name, ID and Password for loging in to the SQL Server). 
 
-SqlConnection^ conDatabase = gcnew SqlConnection("Data Source=<TYPE FULL NAME OF SQL SERVER>;Initial Catalog=<TYPE CATALOG>;User ID=<TYPE YOUR ID>;Password=<TYPE PSWD>;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-
-Now you can start program (CTRL + F5) with connection to your Azure Cloud SQL Server.
+If everything compiles correctly, now you can start program (CTRL + F5) and... voilà you have a Windows Form App with connection to your Azure Cloud SQL Server.
  
 <img src="assets/Visual-final.PNG" width="350">
 
+ 
+Thanks for reading, I hope my tutorial was helpful.
+Author: Tomasz Smaruj 
 
