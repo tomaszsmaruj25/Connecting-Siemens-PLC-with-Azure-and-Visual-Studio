@@ -109,6 +109,7 @@ This is neccesery to add IP Adresses on the whitelist. Click "add client IP", an
 
 *Attention, first you have to create table where you will save your data. To do it, firstly go to the step 4. and come back afterwards. 
  
+ 
 <img src="assets/azure_stream.PNG" width="600">
 
 
@@ -120,7 +121,13 @@ You can use [My SQL Script](/MyDBquery.sql) to create the basic table and check 
 
 
 ### 5. Visual Studio
+Install additional extension for Visual Studio which is SQL Server and open SQL Server Object Explorer. Log to your database and you should see
+When everything is working go to the file MyForm.h in line 405 you need to add a connection parameters(server name, catalog name, ID and Password for loging in to the SQL Server,  in te line:
 
+SqlConnection^ conDatabase = gcnew SqlConnection("Data Source=<TYPE FULL NAME OF SQL SERVER>;Initial Catalog=<TYPE CATALOG>;User ID=<TYPE YOUR ID>;Password=<TYPE PSWD>;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+
+Now you can start program (CTRL + F5) with connection to your Azure Cloud SQL Server.
+ 
 <img src="assets/Visual-final.PNG" width="350">
 
 
