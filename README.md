@@ -67,6 +67,7 @@ In the tags configuration tab, add a new variable with the same address with whi
 If the variable works correctly, now go to the Basic IDE section and write a program to communicate with the Azure cloud. Note, this will require a few extra steps from you, such as uploading the Certificate and Key files via FTP to the Ewon router. At this point, it's best to follow the instructions in the thread[4] and in the video[5] (YOU NEED TO DO IT).
 
 When you finish the YT tutorial, you should have the code similar like below (I made my script smaller, you can find it [My Ewon Script](/ewon_program.bas))
+
 Configuration of MQTT: 
 
 <img src="assets/ewon-prg-config.PNG" width="450">
@@ -100,9 +101,11 @@ Now, you can go back to your Ewon Script, change values of variables - "DeviceId
 
 #### SQL Database
 Select new service, and chose SQL Database. Name your database, and select subscription. Also you need to create server, it is important because you will need server name, login and password, to establish remote connection to your database. In the last step watch the tab review, and check billing(you can create test server for only few $ for a month), if it is okey, click create. Once the service is created, open it. Check the full server name - you will need it. Then click on the "Firewall" tab. 
+ 
 <img src="assets/azure_sql.PNG" width="650">
 
 This is neccesery to add IP Adresses on the whitelist. Click "add client IP", and additionaly check "Yes" for "Allow azure services to access this server". Then you can be sure that the firewall will not stop yours services. Remember about this tab, because at various times Azure may ask you to add an IP address, e.g. your computer to the whitelist. You can add them directly here. 
+ 
 <img src="assets/azure_sql_fw.PNG" width="400">
 
 #### Stream Analytics Job
