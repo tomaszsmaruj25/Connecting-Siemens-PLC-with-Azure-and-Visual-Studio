@@ -6,7 +6,6 @@ It was the final project to pass the Industrial Databases subject at the Automat
 
 <img src="assets/Visual-final.PNG" width="450" height="300">
 
-
 ## Hardware and software requirements
 
 - Siemens PLC S7-1200 or S7-1500 or other programable controler. 
@@ -14,8 +13,6 @@ It was the final project to pass the Industrial Databases subject at the Automat
 - Azure Account with some cash on it. Some of the services are paid. 
 - Visual Studio 2019
 - Microsoft SQL Server Management Studio
-
-<img src="assets/architecture.png" width="600" height="420">
 
 ## Links
 Below you can find helpful link that I used to create and configure whole project. 
@@ -38,19 +35,51 @@ Below you can find helpful link that I used to create and configure whole projec
 - [6] Connecting IOT Hub with SQL Server
 [https://www.youtube.com/watch?v=9WQ2hGjFs6M](https://www.youtube.com/watch?v=9WQ2hGjFs6M).
 
+- [7] Connecting Azure SQL Database with Microsoft SQL Server and Visual Studio 2019. 
+[https://www.youtube.com/watch?v=JMcmJGogqyg](https://www.youtube.com/watch?v=JMcmJGogqyg).
+
+
 ## Configuration step-by-step
 
 ### 1. Tia Portal
 
+<img src="assets/s7-adresses.PNG" width="300">
+
+<img src="assets/s7-lad.PNG" width="350">
+
+<img src="assets/s7-putget.PNG" width="450">
+
 ### 2. Ewon configuration
+
+<img src="assets/ewon-variable.PNG" width="350">
+
+<img src="assets/ewon-start.PNG" width="150">
+
+<img src="assets/ewon-prg-json.PNG" width="570">
+
+<img src="assets/ewon-prg-config.PNG" width="450">
 
 ### 3. Azure Portal
 
+<img src="assets/azure_iot-hub.PNG" width="350">
+
+<img src="assets/azure-iot-device.PNG" width="550">
+
+
+<img src="assets/azure_sql.PNG" width="650">
+
+<img src="assets/azure_sql_fw.PNG" width="400">
+
+
+<img src="assets/azure_stream.PNG" width="600">
+
+
 ### 4. Microsoft SQL Server
+
+<img src="assets/SQLServer-connection.PNG" width="350">
 
 ### 5. Visual Studio
 
+<img src="assets/Visual-final.PNG" width="350">
 
-<img src="assets/HalfCheetah.gif" width="450" height="300">
 
-<img src="assets/Hooper.gif" width="450" height="300">
