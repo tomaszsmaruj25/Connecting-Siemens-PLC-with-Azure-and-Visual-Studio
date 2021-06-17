@@ -59,27 +59,56 @@ Last thing is to select your variable to send. It must have its own address. For
 <img src="assets/s7-lad.PNG" width="350">
 
 ### 2. Ewon configuration
+Now that we have configured the controller, you should now go to the Ewon router settings. I assume you have already configured a router and have created an IO Server that communicates with the PLC. If not, see the developer's documentation[2].
+In the tags configuration tab, add a new variable with the same address with which you set it on the controller. You can see it below. 
 
 <img src="assets/ewon-variable.PNG" width="350">
 
-<img src="assets/ewon-start.PNG" width="150">
+If the variable works correctly, now go to the Basic IDE section and write a program to communicate with the Azure cloud. Note, this will require a few extra steps from you, such as uploading the Certificate and Key files via FTP to the Ewon router. At this point, it's best to follow the instructions in the thread[4] and in the video[5] (YOU NEED TO DO IT).
 
-<img src="assets/ewon-prg-json.PNG" width="570">
+When you finish the YT tutorial, you should have the code similar like below (I made my script smaller, you can find it [My Ewon Script](/ewon_program.bas))
+Configuration of MQTT: 
 
 <img src="assets/ewon-prg-config.PNG" width="450">
 
-### 3. Azure Portal
+Creating JSON Frame to send:
 
+<img src="assets/ewon-prg-json.PNG" width="570">
+
+Do not run the program until you finish the next step. 
+
+<img src="assets/ewon-start.PNG" width="150">
+
+If you want to know more about the script, see the documentation[3] and chapter "MQTT". 
+
+### 3. Microsoft Azure Portal
+If the router has already been configured, we need to create three main services in Azure Platform.
+- IOT Hub - service that will receive messages coming from the Ewon router
+- SQL Database - it will store the information selected by us in the database
+- Stream Analytics Job - which will connect 2 previous services, i.e. send and select data that goes from the input of IOT Hub to the output, for us it is SQL Server.
+The short instruction for each service is below, for more information you can watch the video [6]: 
+
+#### IOT Hub
+On Azure select new service, and choose IOT Hub, enter basic parameters like hub name, select subscription and create. 
+Once it is created, go to the service and select IOT Devices. Add a new device, be sure to name it the same as the files previously transferred via FTP. Select the self-signed key and then enter the footprint value in both of them, which is in your <device-name> .crt file - it was explained in the video [5]. You should have added 1 device like below. 
+
+ <img src="assets/azure-iot-device.PNG" width="550">
+ 
+Now, you can go back to your Ewon Script, change values of variables - "DeviceId$" and "IotHubName$" for yours settings, and start the script. Return to the IOT Hub service, after some time you should see the message count should increase (as below). If it doesn't work, check your configuration again. 
+ 
 <img src="assets/azure_iot-hub.PNG" width="350">
 
-<img src="assets/azure-iot-device.PNG" width="550">
-
-
+#### SQL Database
+Select new service, and chose SQL Database. Name your database, and select subscription. Also you need to create server, it is important because you will need server name, login and password, to establish remote connection to your database. In the last step watch the tab review, and check billing(you can create test server for only few $ for a month), if it is okey, click create. Once the service is created, open it. Check the full server name - you will need it. Then click on the "Firewall" tab. 
 <img src="assets/azure_sql.PNG" width="650">
 
+This is neccesery to add IP Adresses on the whitelist. Click "add client IP", and additionaly check "Yes" for "Allow azure services to access this server". Then you can be sure that the firewall will not stop yours services. Remember about this tab, because at various times Azure may ask you to add an IP address, e.g. your computer to the whitelist. You can add them directly here. 
 <img src="assets/azure_sql_fw.PNG" width="400">
 
-First you have to create table where you will save your data. To do it, firstly go to the step 4. and come back afterwards. 
+#### Stream Analytics Job
+
+*Attention, first you have to create table where you will save your data. To do it, firstly go to the step 4. and come back afterwards. 
+ 
 <img src="assets/azure_stream.PNG" width="600">
 
 
