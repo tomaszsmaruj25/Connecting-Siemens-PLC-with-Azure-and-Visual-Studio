@@ -135,11 +135,9 @@ If everything compiles correctly, now you can start program (CTRL + F5) and... v
  
 <img src="assets/Visual-final.PNG" width="350">
 
-Note: The main aim of the project was to deal with the subject of IOT and connecting the device with a cloud database, so the application is very simple. In further projects, I will focus on solutions to connect with the base and visualization - such as, for example, Django. 
+Note: The main aim of the project was to deal with the subject of IOT and connecting the device with a cloud database, so the application is very simple. In further projects, I will focus on solutions to connect with the base and visualization - for example, Django. 
  
 Thanks for reading, I hope my tutorial was helpful.
  
 Author: Tomasz Smaruj 
- 
-email: tomasz.smaruj@wp.pl 
 
