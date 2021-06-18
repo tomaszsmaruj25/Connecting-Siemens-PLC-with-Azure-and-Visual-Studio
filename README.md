@@ -41,7 +41,7 @@ Below you can find helpful links that I used to create and configure whole proje
 [https://www.youtube.com/watch?v=JMcmJGogqyg](https://www.youtube.com/watch?v=JMcmJGogqyg).
 
 
-## Configuration step-by-step
+## Step-by-step configuration 
 
 ### 1. Tia Portal
 In this section we need to enable connection with Ewon router from the PLC controller side. More detailed documentation is available on the developer's website [1].  
